@@ -11,12 +11,21 @@ const server  = http.createServer((req,res) => {
      switch(req.url){
         case '/':
             path+= 'index.html';
+            res.statusCode = 200 ;
             break;
         case '/about':
             path+= 'about.html';
+            res.statusCode = 200;
+            break;
+        case '/about-me':
+            
+            res.statusCode = 301;
+            res.setHeader('Location','/about');
+            res.end();
             break;
         default:
             path+= '404page.html';
+            res.statusCode = 404;
             break;
      }
      fs.readFile(path,'utf8', (err,data) => {
@@ -28,8 +37,8 @@ const server  = http.createServer((req,res) => {
         else {
            
             
-
-             res.write(data);
+            
+            res.write(data);
             
             res.end();
         }
