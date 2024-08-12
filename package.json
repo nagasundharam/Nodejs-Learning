@@ -1,0 +1,19 @@
+{
+  "name": "nodejs_net_ninja",
+  "version": "1.0.0",
+  "description": "",
+  "main": "global.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

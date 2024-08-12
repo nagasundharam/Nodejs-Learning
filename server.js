@@ -1,7 +1,16 @@
 const http = require('http');
 const fs = require('fs');
 
+const _ = require('lodash');
+
 const server  = http.createServer((req,res) => {
+    
+    //lodash
+    const num  = _.random(0,20);
+    console.log(num);
+    
+    
+    
     //  console.log(req.url,req.method);
      //set header content type
      res.setHeader('Content-Type','text/html')
@@ -22,7 +31,7 @@ const server  = http.createServer((req,res) => {
             res.statusCode = 301;
             res.setHeader('Location','/about');
             res.end();
-            break;
+
         default:
             path+= '404page.html';
             res.statusCode = 404;

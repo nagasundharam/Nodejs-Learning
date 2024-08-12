@@ -1,0 +1,45 @@
+packages are in npm 
+packages  -- nodemon,loadbash
+
+needed packages
+
+  -- nodemon  - any changes you made in the files easily reflect on the browser for using this module
+   comment for installing 
+       -- npm install -g nodemon
+       -- You can also install nodemon as a development dependency:
+          npm install --save-dev nodemon 
+
+
+problem : 
+        
+
+PS C:\Users\nagas\web development\nodejs_net_ninja> nodemon server.js 
+nodemon : The term 'nodemon' is not recognized as the name of a cmdlet, 
+function, script file, or operable program. Check the spelling of the       
+name, or if a path was included, verify that the path is correct and try    
+again.
+At line:1 char:1
++ nodemon server.js
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (nodemon:String) [], Command  
+   NotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+solved :
+      using npx nodemon server
+      C:\Users\nagas\web development\nodejs_net_ninja> npx nodemon 
+      
+
+
+PACKAGE FILE :
+   -- it is an json file  
+   -- if you download any file locally this will keep track on the device
+
+creating package json file
+    -- npm init
+
+
+
+lodash 
+  -- npm install lodash
