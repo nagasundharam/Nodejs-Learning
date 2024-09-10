@@ -1,29 +1,20 @@
 
 const express = require('express');
-
 const app = express();
-
 const bodyParser = require('body-parser');
+const adminRoutes = require('./routes/admin')
+const shopRoutes = require('./routes/shop')
+const path = require('path')
+app.use(bodyParser.urlencoded());
 
-app.use(bodyParser.urlencoded())
+app.use('/admin',adminRoutes);
+app.use(shopRoutes);
 
-app.get('/add-product',(req,res,next) => {
-    res.send('<h1>Add products</h1> <form action = "/store-product" method ="POST"><input type = "text" name = "title"/><input type ="submit" value ="Submit"/></form>')
-  
-    
-})
-app.post ('/store-product',(req,res,next) => {
-    console.log('Form data',req.body.title);
-    res.send('<b>Product Submitted</b>');
-  
-    
+app.use((req,res,next) => {
+    res.status(404).sendFile(path.join(__dirname,'views','404.html'))
 })
 
-app.use('/',(req,res,next)=> {
-    res.send('<h1>First<h1/>');
-    console.log("f irst middleware");
-    // next();
-})
+
 
 
 
